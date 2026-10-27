@@ -1,0 +1,26 @@
+{
+  "session": "W1-토",
+  "title": "다른 주제로 한 번 더",
+  "capture": "새 주제가 더해진 내 퀴즈 주소",
+  "tiers": {
+    "최소": {
+      "label": "문항 하나를 내 계산으로 · 올렸다",
+      "checks": [
+        {"type": "any", "label": "내 계산으로 바꾼 문항이 없다", "of": [
+          {"type": "gam_new_topics", "min": 1},
+          {"type": "gam_changed_topic"}
+        ]},
+        {"type": "git_commits_since", "repo": "gam-test", "min": 1, "label": "토요일 뒤로 남긴 저장 지점이 없다"}
+      ]
+    },
+    "기본": {
+      "label": "새 주제 다섯 문항 · 올렸다",
+      "checks": [
+        {"type": "gam_new_topics", "min": 1, "min_questions": 5, "need": ["basis"], "label": "다섯 문항(문항마다 basis)이 든 새 주제가 없다"},
+        {"type": "git_remote", "repo": "gam-test", "contains": "github.com", "label": "gam-test 가 GitHub에 올라가 있지 않다"},
+        {"type": "git_commits_since", "repo": "gam-test", "min": 1, "label": "토요일 뒤로 남긴 저장 지점이 없다"}
+      ]
+    },
+    "도전": {"self": "기본에 더해, 내 프롬프트를 점검받고 들은 의견으로 고쳤다"}
+  }
+}

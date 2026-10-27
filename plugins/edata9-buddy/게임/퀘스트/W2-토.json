@@ -1,0 +1,19 @@
+{
+  "session": "W2-토",
+  "title": "내 업무 같은 문장으로 · 노션 주간 노트",
+  "capture": "노션 «EDATA 주간 노트» 페이지 · 내 버전 분류기 링크",
+  "tiers": {
+    "최소": {
+      "label": "기준 한 줄을 바꿔 다시 남겼다",
+      "checks": [{"type": "git_commits_since", "repo": "classifier", "min": 1, "label": "토요일 뒤로 classifier 에 남긴 저장 지점이 없다"}]
+    },
+    "기본": {
+      "label": "내 분류기 하나 더 · «2주» 한 장",
+      "checks": [
+        {"type": "glob_min", "pattern": "*/criteria.json", "min": 2, "label": "분류기 폴더가 하나뿐이다 — 내 업무 같은 문장으로 하나 더 만들었는가"},
+        {"type": "contains", "path": "my-wiki/판단기준.md", "text": "2주", "label": "판단기준.md 에 «2주» 장이 없다"}
+      ]
+    },
+    "도전": {"self": "칸을 새로 짜고, 채점용 열 개로 재 봤다"}
+  }
+}

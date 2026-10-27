@@ -1,0 +1,18 @@
+{
+  "session": "W2-목",
+  "title": "열쇠를 숨기는 자리 — 잠금과 검문",
+  "capture": "훅이 커밋을 막은 화면 · Vercel 주소에서 AI로 분류된 카드",
+  "tiers": {
+    "기본": {
+      "label": "잠금 · 검문 · 코드에 열쇠 없음 · GitHub",
+      "checks": [
+        {"type": "contains", "path": "classifier/.claude/settings.json", "text": "Read(.env)", "label": "settings.json 의 deny 에 Read(.env) 가 없다 — 잠그지 않았다"},
+        {"type": "contains", "path": "classifier/.claude/settings.json", "text": "block_secrets.py", "label": "settings.json 에 block_secrets.py 훅이 없다 — 검문을 걸지 않았다"},
+        {"type": "absent", "patterns": ["classifier/*.js", "classifier/*.json", "classifier/api/*.py"], "text": "AIza", "label": "코드에 «AIza…» 모양이 남아 있다 — 가짜 열쇠 주석을 지웠는가"},
+        {"type": "git_remote", "repo": "classifier", "contains": "github.com", "label": "classifier 가 GitHub에 올라가 있지 않다"}
+      ]
+    },
+    "도전": {"self": "GEMINI_MODEL 을 없는 이름으로 바꿔 앱이 «규칙»으로 넘어가는 것을 보고, 되돌렸다"},
+    "고수": {"self": "부탁 · 잠금 · 검문이 각각 무엇을 못 막는지 위키 decisions/ 에 적었다"}
+  }
+}

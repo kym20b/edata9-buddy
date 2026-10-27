@@ -1,0 +1,14 @@
+{
+  "name": "edata9",
+  "description": "EDATA 9기 수업 동반 플러그인 — 할일 · 체크 · 막힘 · 따라잡기 · 도감 · 키우기",
+  "owner": {
+    "name": "EDATA 9기"
+  },
+  "plugins": [
+    {
+      "name": "edata9-buddy",
+      "source": "./plugins/edata9-buddy",
+      "description": "회차의 할 일과 체크아웃 기준, 막혔을 때의 순서, 빠진 날 따라잡기, 클로드 박사 도감과 «박사 키우기» 게임"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "session": "W1-금",
+  "title": "올리고, 남기고, 나눈다",
+  "capture": "폰에서 연 내 ….vercel.app 주소 · 포트폴리오 첫 칸",
+  "tiers": {
+    "기본": {
+      "label": "저장 지점 · GitHub · 포트폴리오 첫 칸",
+      "checks": [
+        {"type": "git_commits_min", "repo": "gam-test", "min": 1, "label": "gam-test 에 저장 지점(커밋)이 없다"},
+        {"type": "git_remote", "repo": "gam-test", "contains": "github.com", "label": "gam-test 가 GitHub에 올라가 있지 않다"},
+        {"type": "json_list", "path": "portfolio/portfolio.json", "key": "cards", "min": 1, "nonempty": ["judgment"], "contains": {"url": "vercel.app"}, "label": "포트폴리오에 «내가 내린 판단»과 vercel.app 주소가 든 칸이 없다"}
+      ]
+    },
+    "도전": {"self": "처음 보는 사람 한 명에게 링크를 보내 어디서 멈췄는지 듣고 고쳤다"},
+    "고수": {"self": "바뀐 것을 읽고 커밋 설명을 내가 직접 썼다"}
+  }
+}

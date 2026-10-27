@@ -1,0 +1,8 @@
+{
+  "name": "edata9-buddy",
+  "version": "0.2.1",
+  "description": "EDATA 9기 수업 동반 플러그인. 훅과 MCP 서버를 넣지 않는다 — 읽고 안내한다. «박사 키우기» 게임만 edata9-work/edata9-doctor 폴더에 세이브를 쓴다.",
+  "author": {
+    "name": "EDATA 9기"
+  }
+}

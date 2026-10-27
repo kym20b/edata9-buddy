@@ -1,0 +1,22 @@
+{
+  "session": "W1-화",
+  "title": "내 컴퓨터에 작업실을 차린다",
+  "capture": "설치 점검표",
+  "tiers": {
+    "기본": {
+      "label": "작업 폴더 · 목업 · 공용 데이터 · 주제.md",
+      "checks": [
+        {"type": "exists", "path": "gam-test/index.html", "label": "gam-test/index.html 이 없다"},
+        {"type": "glob_min", "pattern": "gam-test/topics/*.json", "min": 10, "label": "gam-test/topics/ 의 문항 파일이 열 개보다 적다"},
+        {"type": "exists", "path": "gam-test/.claude/settings.json", "label": "gam-test/.claude/settings.json 이 없다"},
+        {"type": "glob_min", "pattern": "data/*.parquet", "min": 12, "label": "data/ 에 공용 데이터 12개가 없다 — 00_시작_공용데이터.zip 을 edata9-work 에 풀었는지"},
+        {"type": "nonempty", "path": "gam-test/주제.md", "label": "gam-test/주제.md 가 없거나 비었다"}
+      ]
+    },
+    "도전": {"self": "Git과 GitHub CLI를 설치했다"},
+    "고수": {
+      "label": "주제.md 에 출처 링크",
+      "checks": [{"type": "contains", "path": "gam-test/주제.md", "text": "http", "label": "주제.md 에 출처 링크(http…)가 없다"}]
+    }
+  }
+}

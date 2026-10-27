@@ -1,0 +1,21 @@
+{
+  "session": "W2-금",
+  "title": "AI를 채점한다",
+  "capture": "채점 탭 — 규칙과 AI의 점수가 나란히 · 포트폴리오 둘째 칸",
+  "tiers": {
+    "기본": {
+      "label": "잰 조건 기록 · 결정 기록 · «2주» 한 장 · 포트폴리오 둘째 칸",
+      "checks": [
+        {"type": "glob_min", "pattern": "my-wiki/log/*.md", "min": 1, "label": "my-wiki/log/ 에 잰 조건을 적은 날짜 기록이 없다"},
+        {"type": "glob_min", "pattern": "my-wiki/decisions/d-*.md", "min": 2, "label": "my-wiki/decisions/ 에 결정 기록이 둘보다 적다"},
+        {"type": "contains", "path": "my-wiki/판단기준.md", "text": "2주", "label": "판단기준.md 에 «2주» 장이 없다"},
+        {"type": "json_list", "path": "portfolio/portfolio.json", "key": "cards", "min": 2, "nonempty": ["judgment"], "label": "포트폴리오에 «내가 내린 판단»이 든 칸이 둘보다 적다"}
+      ]
+    },
+    "도전": {
+      "label": "처음 보는 문장 스무 개",
+      "checks": [{"type": "exists", "path": "classifier/data/fresh20.json", "label": "classifier/data/fresh20.json 이 없다"}]
+    },
+    "고수": {"self": "기준을 바꾼 뒤 걸리는 정답을 다시 보고 재채점했다"}
+  }
+}

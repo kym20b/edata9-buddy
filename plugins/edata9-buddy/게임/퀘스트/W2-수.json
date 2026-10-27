@@ -1,0 +1,21 @@
+{
+  "session": "W2-수",
+  "title": "분류 기준은 사람이 정한다",
+  "capture": "«기준» 탭에 내 이름 · 올린 version · 고친 내용이 보이는 화면",
+  "tiers": {
+    "기본": {
+      "label": "내 이름 · 올린 버전 · 칸 이름은 그대로 · 저장 지점",
+      "checks": [
+        {"type": "json_ne", "path": "classifier/criteria.json", "key": "owner", "value": "이 기준은 사람이 정했습니다. AI는 이 기준을 따라 분류할 뿐입니다.", "label": "criteria.json 의 owner 가 목업 문장 그대로다"},
+        {"type": "json_ne", "path": "classifier/criteria.json", "key": "version", "value": "1", "label": "criteria.json 의 version 이 아직 1이다"},
+        {"type": "json_values", "path": "classifier/criteria.json", "key": "categories", "field": "name", "equals": ["해지관련", "앱기능", "서비스", "품질", "요금", "기타"], "label": "칸 이름 여섯 개가 목업과 다르다 — 칸 이름은 바꾸지 않는다"},
+        {"type": "git_commits_min", "repo": "classifier", "min": 2, "label": "classifier 에 기준을 고친 저장 지점이 없다"}
+      ]
+    },
+    "도전": {
+      "label": "판단이 갈리는 문장 모음",
+      "checks": [{"type": "glob_min", "pattern": "my-wiki/inbox/*", "min": 1, "label": "my-wiki/inbox/ 가 비어 있다"}]
+    },
+    "고수": {"self": "keywords 를 고쳐 «예시 문장 넣기»로 규칙의 판정이 바뀌는 것을 두 번 봤다"}
+  }
+}

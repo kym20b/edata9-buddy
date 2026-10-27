@@ -1,0 +1,30 @@
+{
+  "session": "W2-화",
+  "title": "AI에게 무엇을 보내도 되는가",
+  "capture": "«AI에 보낸 문장»에 [전화번호]가 보이는 화면 · 새 대화가 «절대 하지 않을 것»을 읊는 화면",
+  "tiers": {
+    "기본": {
+      "label": "분류기 · 내가 더한 가림 규칙 · 위키와 CLAUDE.md",
+      "checks": [
+        {"type": "exists", "path": "classifier/criteria.json", "label": "classifier/criteria.json 이 없다 — 목업을 classifier 로 복사했는가"},
+        {"type": "file_changed", "path": "classifier/mask.js", "mock": "w2-classifier/mask.js", "label": "mask.js 가 목업 그대로다 — 가림 규칙을 하나 더하지 않았다"},
+        {"type": "all", "label": "my-wiki 의 폴더 넷(decisions · limits · log · inbox)이 다 있지 않다", "of": [
+          {"type": "exists", "path": "my-wiki/decisions"}, {"type": "exists", "path": "my-wiki/limits"},
+          {"type": "exists", "path": "my-wiki/log"}, {"type": "exists", "path": "my-wiki/inbox"}
+        ]},
+        {"type": "contains", "path": "my-wiki/CLAUDE.md", "text": "절대 하지 않을 것", "label": "my-wiki/CLAUDE.md 에 «절대 하지 않을 것»이 없다"}
+      ]
+    },
+    "도전": {
+      "label": "보내기 판단 결정 기록",
+      "checks": [{"type": "glob_min", "pattern": "my-wiki/decisions/d-*.md", "min": 1, "label": "my-wiki/decisions/ 에 결정 기록(d-…)이 없다"}]
+    },
+    "고수": {
+      "label": "1주의 기록을 위키로",
+      "checks": [
+        {"type": "glob_min", "pattern": "my-wiki/limits/*.md", "min": 1, "label": "my-wiki/limits/ 에 한계 기록이 없다"},
+        {"type": "contains", "path": "my-wiki/판단기준.md", "text": "1주", "label": "판단기준.md 에 «1주» 장이 없다"}
+      ]
+    }
+  }
+}

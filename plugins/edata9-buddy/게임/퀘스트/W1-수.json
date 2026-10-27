@@ -1,0 +1,17 @@
+{
+  "session": "W1-수",
+  "title": "AI에게 화면을 시킨다",
+  "capture": "내 제목과 색으로 바뀐 첫 화면(폰 크기)",
+  "tiers": {
+    "기본": {
+      "label": "내 제목 · 시안 · 문항 파일 그대로",
+      "checks": [
+        {"type": "json_ne", "path": "gam-test/topics.json", "key": "title", "value": "감 테스트", "label": "topics.json 의 제목이 아직 «감 테스트»다"},
+        {"type": "exists", "path": "gam-test/시안*", "label": "gam-test 에 시안 그림이 없다"},
+        {"type": "glob_min", "pattern": "gam-test/topics/*.json", "min": 10, "label": "문항 파일이 열 개보다 적다 — 화면을 바꾸다 지워졌을 수 있다"}
+      ]
+    },
+    "도전": {"self": "«왜» 답에서 내가 정한 적 없는 것을 하나 찾아, 내가 정해서 다시 시켰다"},
+    "고수": {"self": "다섯 칸 프롬프트를 새 대화에서 점검받았다"}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_설명": "make_game.py 가 목업에서 만든다. 손으로 고치지 않는다.",
+  "ids": [
+    "seoul-heat",
+    "seoul-rain",
+    "seoul-air",
+    "working-hours",
+    "population",
+    "internet",
+    "usdkrw",
+    "cities",
+    "quakes",
+    "life"
+  ],
+  "topics": {
+    "cities.json": "fdb502c1b74508a752d6f8abb8ae9b23acd630cacadbcd16b305258ee50cd376",
+    "internet.json": "289388a9069bb813e22ac2c4935c3a65cca78a15e2ff0702939020a731de81a8",
+    "life.json": "31e2ab64779e951ea1bfaae6260972b9451b810baf14474d1fe34b50330dd254",
+    "population.json": "5c52422ca767b8d121bccb8466a2b110f60aae6e051a7cfbfea769c122cd33ff",
+    "quakes.json": "50eb4703b76835cf3e7c73db0e1735dfb92bb373601306c48584a011eb4d3e05",
+    "seoul-air.json": "c5acb66fa47d7b5a1b7327a500e3eb1a2c1c8dd60bbb197315885337fae0b0b9",
+    "seoul-heat.json": "d12cf81908e6ff4feb28f737ae70a91357d343e6463ab63a4970a5d4af07fa70",
+    "seoul-rain.json": "a682366825c0816d4d30ef953583a32f292d483a21f2fd9b5f59838a829fd0bd",
+    "usdkrw.json": "aa0500b75cdd37b4ae9ca1136d2204d14a60ce0297881a960c9268a982535fe6",
+    "working-hours.json": "f88847e34f0344514cf062b229ef1e188efafff7f41f333db4fbc7a22a46f5a8"
+  },
+  "files": {
+    "w2-classifier/mask.js": "b446637f08e952e8ebaa3ccda337c60faf320feca6ed45199982705484e09ea4"
+  }
+}
