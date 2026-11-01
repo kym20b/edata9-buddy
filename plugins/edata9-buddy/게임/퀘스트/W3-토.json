@@ -1,0 +1,52 @@
+{
+  "session": "W3-토",
+  "title": "내 스킬로 처음 보는 파일을 · 노션에 «3주»",
+  "capture": "/진단 ../messy/마케팅집행.xlsx 의 진단표 · 노션 «주간 노트»의 «3주»",
+  "tiers": {
+    "최소": {
+      "label": "처방 하나를 내 판단으로 바꿔 남겼다",
+      "checks": [
+        {
+          "type": "git_commits_since",
+          "repo": "cleaner",
+          "min": 1,
+          "label": "토요일 뒤로 cleaner 에 남긴 저장 지점이 없다"
+        }
+      ]
+    },
+    "기본": {
+      "label": "처음 보는 파일의 진단 · 그 파일의 규칙 · «3주» 한 장",
+      "checks": [
+        {
+          "type": "glob_min",
+          "pattern": "cleaner/진단/*마케팅*",
+          "min": 1,
+          "label": "cleaner/진단/ 에 마케팅집행의 진단 파일이 없다"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "cleaner/rules/*.json",
+          "min": 3,
+          "label": "cleaner/rules/ 에 새 규칙 파일이 없다"
+        },
+        {
+          "type": "contains",
+          "path": "my-wiki/판단기준.md",
+          "text": "3주",
+          "label": "판단기준.md 에 «3주» 장이 없다"
+        }
+      ]
+    },
+    "도전": {
+      "label": "정리기에 처방 둘을 더했다",
+      "checks": [
+        {
+          "type": "file_changed",
+          "path": "cleaner/clean.js",
+          "mock": "w3-cleaner/clean.js",
+          "label": "clean.js 가 목업 그대로다"
+        }
+      ]
+    }
+  }
+}

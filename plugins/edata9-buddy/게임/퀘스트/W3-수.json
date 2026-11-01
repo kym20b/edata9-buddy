@@ -1,0 +1,29 @@
+{
+  "session": "W3-수",
+  "title": "다섯 증상과 첫 스킬",
+  "capture": "/진단 ../messy/영업실적.xlsx 가 띄운 진단표",
+  "tiers": {
+    "기본": {
+      "label": "스킬 «진단» · 처음 보는 파일의 진단표",
+      "checks": [
+        {
+          "type": "exists",
+          "path": "cleaner/.claude/skills/*/SKILL.md",
+          "label": "cleaner/.claude/skills/ 에 SKILL.md 가 없다"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "cleaner/진단/*_진단.md",
+          "min": 1,
+          "label": "cleaner/진단/ 에 진단 결과 파일이 없다 — /진단 을 불렀는가"
+        }
+      ]
+    },
+    "도전": {
+      "self": "스킬이 칸 사이 모순을 먼저 묻게 하고 다시 돌렸다"
+    },
+    "고수": {
+      "self": "/진단 이라고 부르지 않고 말로만 부탁해서 Claude가 스스로 스킬을 꺼내는 것을 봤다"
+    }
+  }
+}

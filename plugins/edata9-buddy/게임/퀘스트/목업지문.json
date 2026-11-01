@@ -25,6 +25,9 @@
     "working-hours.json": "f88847e34f0344514cf062b229ef1e188efafff7f41f333db4fbc7a22a46f5a8"
   },
   "files": {
-    "w2-classifier/mask.js": "b446637f08e952e8ebaa3ccda337c60faf320feca6ed45199982705484e09ea4"
+    "w2-classifier/mask.js": "b446637f08e952e8ebaa3ccda337c60faf320feca6ed45199982705484e09ea4",
+    "w3-cleaner/clean.js": "24ce292fb07dd762d912f1fd0ef63b5fa5f30f941a811819e148983c589f3da8",
+    "w3-cleaner/rules/교육이수로그.json": "a29bacffc22051757a21a8f31aa100ce70b38380eb00ac5e7f47ddbaf1d865c3",
+    "w3-cleaner/rules/상담이력.json": "a3ad46f961bd6ab75fd8e9085ec1a40fa259b92fb761e5612cea62846cb89856"
   }
 }

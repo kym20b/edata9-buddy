@@ -1,0 +1,38 @@
+{
+  "session": "W3-목",
+  "title": "처리 규칙과 두 번 돌려도 같은 결과",
+  "capture": "내 규칙으로 «두 번 돌려도 같은 결과»가 뜬 화면 · 규칙 하나의 why",
+  "tiers": {
+    "기본": {
+      "label": "내 규칙 파일 · 저장 지점",
+      "checks": [
+        {
+          "type": "file_changed",
+          "path": "cleaner/rules/교육이수로그.json",
+          "mock": "w3-cleaner/rules/교육이수로그.json",
+          "label": "rules/교육이수로그.json 이 목업 그대로다 — 내 처방을 옮겼는가"
+        },
+        {
+          "type": "git_commits_min",
+          "repo": "cleaner",
+          "min": 2,
+          "label": "cleaner 에 저장 지점이 둘보다 적다 — 첫 저장 지점과 규칙을 고친 저장 지점"
+        }
+      ]
+    },
+    "도전": {
+      "self": "/clear 뒤 새 대화가 규칙의 이유를 말하는 것을 봤다"
+    },
+    "고수": {
+      "label": "상담이력의 처방 하나를 바꿔 예상과 맞춰 봤다",
+      "checks": [
+        {
+          "type": "file_changed",
+          "path": "cleaner/rules/상담이력.json",
+          "mock": "w3-cleaner/rules/상담이력.json",
+          "label": "rules/상담이력.json 이 목업 그대로다"
+        }
+      ]
+    }
+  }
+}

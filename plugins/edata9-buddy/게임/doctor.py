@@ -280,8 +280,30 @@ def norm_hash(b):
     return hashlib.sha256(b.replace(b"\r\n", b"\n")).hexdigest()
 
 
+def remote_json(name):
+    """플러그인에 없는 퀘스트 파일을 공개 저장소에서 읽는다 — 매주 플러그인을 새로 받지 않게.
+    읽기만 하고 아무것도 보내지 않는다. 받지 못하면 None."""
+    import urllib.parse
+    import urllib.request
+    base = (read_json(os.path.join(HERE, "..", "설정.json")) or {}).get("quest_url")
+    if not base:
+        return None
+    try:
+        with urllib.request.urlopen(base + urllib.parse.quote(name), timeout=10) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except Exception:
+        return None
+
+
 def mockup_prints():
     return read_json(os.path.join(QUESTS, "목업지문.json")) or {"topics": {}, "ids": []}
+
+
+def mock_hash(mock):
+    h = mockup_prints().get("files", {}).get(mock)
+    if h:
+        return h
+    return ((remote_json("목업지문.json") or {}).get("files") or {}).get(mock)
 
 
 def new_topics(work, c):
@@ -358,7 +380,7 @@ def check(work, c, sid):
     if t == "file_changed":
         # 목업에서 받은 그대로가 아니다 — 줄바꿈 차이는 같은 것으로 본다
         p = P(work, c["path"])
-        h = mockup_prints().get("files", {}).get(c["mock"])
+        h = mock_hash(c["mock"])
         if not os.path.isfile(p) or not h:
             return False, label
         return norm_hash(open(p, "rb").read()) != h, label
@@ -423,9 +445,15 @@ def cmd_check(work, args):
     if not sid:
         stop("어느 회차인지 알려 주세요. 예: `/키우기 확인 W1-화`")
     qf = os.path.join(QUESTS, f"{sid}.json")
-    if not os.path.exists(qf):
-        stop(f"{sid} 퀘스트는 아직 준비되지 않았습니다. 강사가 그 주가 오기 전에 넣어 둡니다.")
-    quest = json.load(open(qf, encoding="utf-8"))
+    if os.path.exists(qf):
+        quest = json.load(open(qf, encoding="utf-8"))
+    else:
+        quest = remote_json(f"{sid}.json")
+        if quest is None:
+            stop(f"{sid} 퀘스트를 가져오지 못했습니다. 인터넷 연결을 확인하고 다시 불러 주세요. "
+                 "그래도 안 되면 아직 준비되지 않은 회차입니다 — 강사가 그 주가 오기 전에 올려 둡니다. 늦게 받아도 경험치는 같습니다.")
+        if quest.get("session") != sid:
+            stop(f"{sid} 퀘스트 파일이 이상합니다. 강사에게 알려 주세요.")
     rec = ch.setdefault("quests", {}).setdefault(sid, {})
     q_before = quest_xp(sid, dict(rec))
     before_lv, was_hatched = level_of(total_xp(ch)), hatched(ch)

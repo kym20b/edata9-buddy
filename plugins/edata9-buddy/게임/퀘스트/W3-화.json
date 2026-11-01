@@ -1,0 +1,29 @@
+{
+  "session": "W3-화",
+  "title": "한 줄이 무엇인가",
+  "capture": "목업 정리기의 진단 화면 · 파일 넷의 «한 줄» 메모",
+  "tiers": {
+    "기본": {
+      "label": "정리기 · 지저분한 파일 넷",
+      "checks": [
+        {
+          "type": "exists",
+          "path": "cleaner/clean.js",
+          "label": "cleaner/clean.js 가 없다 — 목업을 cleaner 로 복사했는가"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "messy/*.*",
+          "min": 4,
+          "label": "messy/ 에 파일 넷이 없다 — cleaner 옆에 두었는가"
+        }
+      ]
+    },
+    "도전": {
+      "self": "기계가 못 읽은 것과 보낸 쪽에 물을 것을 위키 limits/ 에 남겼다"
+    },
+    "고수": {
+      "self": "영업실적의 소계 줄을 무엇으로 알아볼지 말로 된 규칙 한 줄을 적었다"
+    }
+  }
+}

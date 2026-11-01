@@ -1,0 +1,48 @@
+{
+  "session": "W3-금",
+  "title": "파일이 밖으로 나가지 않는 도구",
+  "capture": "Vercel 주소의 Network 탭 — 규칙 파일 요청뿐 · 포트폴리오 셋째 칸",
+  "tiers": {
+    "기본": {
+      "label": "GitHub · 배포 제외 · 포트폴리오 셋째 칸",
+      "checks": [
+        {
+          "type": "git_remote",
+          "repo": "cleaner",
+          "contains": "github.com",
+          "label": "cleaner 가 GitHub에 올라가 있지 않다"
+        },
+        {
+          "type": "contains",
+          "path": "cleaner/.vercelignore",
+          "text": "tools/",
+          "label": "cleaner/.vercelignore 에 tools/ 가 없다 — 정답이 배포된다"
+        },
+        {
+          "type": "json_list",
+          "path": "portfolio/portfolio.json",
+          "key": "cards",
+          "min": 3,
+          "nonempty": [
+            "judgment"
+          ],
+          "label": "포트폴리오에 «내가 내린 판단»이 든 칸이 셋보다 적다"
+        }
+      ]
+    },
+    "도전": {
+      "label": "규칙이 놓치는 것을 한계로",
+      "checks": [
+        {
+          "type": "glob_min",
+          "pattern": "my-wiki/limits/*.md",
+          "min": 2,
+          "label": "my-wiki/limits/ 에 이번 주 한계 기록이 없다"
+        }
+      ]
+    },
+    "고수": {
+      "self": "한계를 알고도 규칙을 바꾸지 않은 이유를 결정 기록으로 남겼다"
+    }
+  }
+}

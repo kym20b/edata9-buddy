@@ -1,5 +1,7 @@
 {
   "_설명": "스냅샷 저장소. 회차의 체크포인트마다 태그를 단다 — 태그 이름은 w{주}-{tue|wed|thu|fri|sat}-{번호|end}. /따라잡기 가 여기서 가져온다.",
   "snapshot_repo": "https://github.com/kym20b/edata9-snapshots",
-  "확인": "개강 전 강사가 공개 저장소를 만들고 이 주소를 확정한다"
+  "확인": "개강 전 강사가 공개 저장소를 만들고 이 주소를 확정한다",
+  "quest_url": "https://raw.githubusercontent.com/kym20b/edata9-buddy/main/plugins/edata9-buddy/%EA%B2%8C%EC%9E%84/%ED%80%98%EC%8A%A4%ED%8A%B8/",
+  "_퀘스트": "플러그인에 없는 회차의 퀘스트 파일은 /키우기 확인 이 이 주소에서 읽는다(읽기만). 강사는 매주 저장소의 게임/퀘스트/ 에 파일만 올리면 된다"
 }
