@@ -1,10 +1,10 @@
 {
   "session": "W3-금",
-  "title": "파일이 밖으로 나가지 않는 도구",
-  "capture": "Vercel 주소의 Network 탭 — 규칙 파일 요청뿐 · 포트폴리오 셋째 칸",
+  "title": "파일이 밖으로 나가지 않는 도구 · 노션 주간 노트",
+  "capture": "Vercel 주소의 Network 탭 — 규칙 파일 요청뿐 · 포트폴리오 셋째 칸 · 노션 «주간 노트»",
   "tiers": {
     "기본": {
-      "label": "GitHub · 배포 제외 · 포트폴리오 셋째 칸",
+      "label": "GitHub · 배포 제외 · 포트폴리오 셋째 칸 · «3주» 한 장",
       "checks": [
         {
           "type": "git_remote",
@@ -27,22 +27,20 @@
             "judgment"
           ],
           "label": "포트폴리오에 «내가 내린 판단»이 든 칸이 셋보다 적다"
+        },
+        {
+          "type": "contains",
+          "path": "my-wiki/판단기준.md",
+          "text": "3주",
+          "label": "판단기준.md 에 «3주» 장이 없다"
         }
       ]
     },
     "도전": {
-      "label": "규칙이 놓치는 것을 한계로",
-      "checks": [
-        {
-          "type": "glob_min",
-          "pattern": "my-wiki/limits/*.md",
-          "min": 2,
-          "label": "my-wiki/limits/ 에 이번 주 한계 기록이 없다"
-        }
-      ]
+      "self": "한계를 알고도 규칙을 바꾸지 않은 이유를 결정 기록으로 남겼다"
     },
     "고수": {
-      "self": "한계를 알고도 규칙을 바꾸지 않은 이유를 결정 기록으로 남겼다"
+      "self": "조원에게 «쓰기 전에»를 읽혀 보고, 못 알아들은 줄을 고쳤다"
     }
   }
 }
