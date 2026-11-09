@@ -1,0 +1,20 @@
+{
+  "session": "W4-수",
+  "title": "SQL로 직접 묻는다 · Claude를 데이터에 잇는다",
+  "capture": "edata9-data 로 답한 재문의율 표와 그 SQL · DELETE 가 막힌 답",
+  "tiers": {
+    "기본": {
+      "label": "읽기만 하는 데이터 도구 · 데이터 그대로",
+      "checks": [
+        {"type": "contains", "path": "sql-window/tools/duckdb_mcp.py", "text": "MAX_ROWS = 20", "label": "duckdb_mcp.py 의 «앞 20줄만»이 바뀌었다 — 서버를 고치지 않는다"},
+        {"type": "contains", "path": "sql-window/tools/duckdb_mcp.py", "text": "def read_only", "label": "duckdb_mcp.py 의 읽기 전용 검사가 없다 — 서버를 고치지 않는다"},
+        {"type": "glob_min", "pattern": "sql-window/data/*.parquet", "min": 12, "label": "sql-window/data/ 의 parquet 이 열둘보다 적다"}
+      ]
+    },
+    "도전": {
+      "label": "내 질문을 MCP로 묻고 검산한 메모",
+      "checks": [{"type": "glob_min", "pattern": "my-wiki/log/*.md", "min": 1, "label": "my-wiki/log/ 에 검산 메모가 없다"}]
+    },
+    "고수": {"self": "Claude가 «확인하지 않았다»고 한 것을 이미 나온 숫자 둘로 확인했다"}
+  }
+}

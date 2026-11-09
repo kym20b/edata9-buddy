@@ -1,0 +1,25 @@
+{
+  "session": "W4-토",
+  "title": "내 주제의 표 여러 개로, 내 창을",
+  "capture": "내 창의 «준비한 질문» — 표 둘 이상을 붙인 질문 · 정답과 대조한 표",
+  "tiers": {
+    "최소": {
+      "label": "내 표 · 정답 잠금",
+      "checks": [
+        {"type": "exists", "path": "my-window/tools/duckdb_mcp.py", "label": "my-window 가 없다 — 목업을 한 벌 더 복사해 my-window 로 두었는가"},
+        {"type": "absent", "patterns": ["my-window/data/customers.parquet"], "text": "", "label": "my-window/data/ 에 목업 표가 남아 있다 — 내 표로 바꿨는가"},
+        {"type": "glob_min", "pattern": "my-window/tools/answer/*", "min": 1, "label": "my-window/tools/answer/ 에 정답이 없다"},
+        {"type": "contains", "path": "my-window/.claude/settings.json", "text": "tools/answer", "label": "정답 잠금(deny)이 없다 — 교안 2단계"}
+      ]
+    },
+    "기본": {
+      "label": "붙인 질문 · 올리기 · 토요일 기록",
+      "checks": [
+        {"type": "contains", "path": "my-window/questions.json", "text": "JOIN", "label": "my-window/questions.json 에 표를 붙인 질문이 없다"},
+        {"type": "git_remote", "repo": "my-window", "contains": "github.com", "label": "my-window 가 GitHub에 올라가 있지 않다"},
+        {"type": "glob_min", "pattern": "my-wiki/log/*.md", "min": 1, "label": "my-wiki/log/ 에 토요일 기록이 없다"}
+      ]
+    },
+    "도전": {"self": "내 표 하나를 BigQuery에 올려 내 창과 같은 답을 받았다"}
+  }
+}

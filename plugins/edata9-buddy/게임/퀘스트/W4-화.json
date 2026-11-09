@@ -1,0 +1,20 @@
+{
+  "session": "W4-화",
+  "title": "답할 수 있는 질문",
+  "capture": "질문후보.md 의 표 — 질문 다섯 개 이상 · «불가» 하나 이상",
+  "tiers": {
+    "기본": {
+      "label": "조회 창 · 질문후보",
+      "checks": [
+        {"type": "exists", "path": "sql-window/tools/duckdb_mcp.py", "label": "sql-window/tools/duckdb_mcp.py 가 없다 — 목업을 sql-window 로 복사했는가"},
+        {"type": "nonempty", "path": "sql-window/질문후보.md", "label": "sql-window/질문후보.md 가 없다"},
+        {"type": "contains", "path": "sql-window/질문후보.md", "text": "불가", "label": "질문후보.md 에 «불가»가 없다 — 값 · 비교 · 기간 가운데 하나가 없는 질문을 하나 쓴다"}
+      ]
+    },
+    "도전": {
+      "label": "답할 수 없는 것을 위키에",
+      "checks": [{"type": "glob_min", "pattern": "my-wiki/limits/*.md", "min": 1, "label": "my-wiki/limits/ 에 한계 기록이 없다"}]
+    },
+    "고수": {"self": "질문을 열 개까지 늘리고 네 단계(기술 · 진단 · 예측 · 처방)를 고루 넣었다"}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "session": "W4-금",
+  "title": "남이 여는 창, AI가 쓴 SQL",
+  "capture": "Vercel 주소의 내 질문(판단 포인트 · SQL · 표 · ✓ 둘) · 포트폴리오 넷째 칸 · 노션 «4주»",
+  "tiers": {
+    "기본": {
+      "label": "내 질문 · GitHub · 배포 제외 · 포트폴리오 넷째 칸 · «4주» 한 장",
+      "checks": [
+        {"type": "file_changed", "path": "sql-window/questions.json", "mock": "w4-sql-window/questions.json", "label": "questions.json 이 목업 그대로다 — 내 질문을 넣었는가"},
+        {"type": "git_remote", "repo": "sql-window", "contains": "github.com", "label": "sql-window 가 GitHub에 올라가 있지 않다"},
+        {"type": "contains", "path": "sql-window/.vercelignore", "text": ".mcp.json", "label": "sql-window/.vercelignore 에 .mcp.json 이 없다"},
+        {"type": "json_list", "path": "portfolio/portfolio.json", "key": "cards", "min": 4, "nonempty": ["judgment"], "label": "포트폴리오에 «내가 내린 판단»이 든 칸이 넷보다 적다"},
+        {"type": "contains", "path": "my-wiki/판단기준.md", "text": "4주", "label": "판단기준.md 에 «4주» 장이 없다"}
+      ]
+    },
+    "도전": {"self": "창의 AI에 «불가» 질문을 던지고, AI의 이유와 내 판정을 위키 log/ 에 남겼다"},
+    "고수": {"self": "«광고를 보고 들어온 고객»을 내가 정하고, 그 분모로 질문을 창에 넣었다"}
+  }
+}
