@@ -1,16 +1,28 @@
 {
   "session": "W3-금",
-  "title": "파일이 밖으로 나가지 않는 도구 · 노션 주간 노트",
+  "title": "Claude 없는 동료에게 건넨다 · 노션 주간 노트",
   "capture": "Vercel 주소의 Network 탭 — 규칙 파일 요청뿐 · 포트폴리오 셋째 칸 · 노션 «주간 노트»",
   "tiers": {
     "기본": {
-      "label": "GitHub · 배포 제외 · 포트폴리오 셋째 칸 · «3주» 한 장",
+      "label": "규칙 파일 · 한계 기록 · GitHub · 배포 제외 · 포트폴리오 셋째 칸 · «3주» 한 장",
       "checks": [
+        {
+          "type": "glob_min",
+          "pattern": "cleaner/rules/상담원장*.json",
+          "min": 1,
+          "label": "cleaner/rules/ 에 상담원장 규칙 파일이 없다 — 교안 2절"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "my-wiki/limits/[!R]*.md",
+          "min": 1,
+          "label": "my-wiki/limits/ 에 한계 기록이 없다 — 교안 5절 끝"
+        },
         {
           "type": "git_remote",
           "repo": "cleaner",
           "contains": "github.com",
-          "label": "cleaner 가 GitHub에 올라가 있지 않다"
+          "label": "cleaner 가 GitHub에 올라가 있지 않다 — 교안 6절"
         },
         {
           "type": "contains",
@@ -26,21 +38,21 @@
           "nonempty": [
             "judgment"
           ],
-          "label": "포트폴리오에 «내가 내린 판단»이 든 칸이 셋보다 적다"
+          "label": "포트폴리오에 «내가 내린 판단»이 든 칸이 셋보다 적다 — 교안 7절 끝"
         },
         {
           "type": "contains",
           "path": "my-wiki/판단기준.md",
           "text": "3주",
-          "label": "판단기준.md 에 «3주» 장이 없다"
+          "label": "판단기준.md 에 «3주» 장이 없다 — 교안 8절"
         }
       ]
     },
     "도전": {
-      "self": "한계를 알고도 규칙을 바꾸지 않은 이유를 결정 기록으로 남겼다"
+      "self": "고치지 않기로 한 결정에 «버린 안»을 덧붙였다 — 날짜 조건으로 나누면 두 번 돌릴 때 또 나눈다"
     },
     "고수": {
-      "self": "조원에게 «쓰기 전에»를 읽혀 보고, 못 알아들은 줄을 고쳤다"
+      "self": "조원에게 «쓰기 전에»만 읽혀 보고, 멈칫한 줄을 고쳤다"
     }
   }
 }
