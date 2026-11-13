@@ -26,7 +26,6 @@
   },
   "files": {
     "w2-classifier/mask.js": "b446637f08e952e8ebaa3ccda337c60faf320feca6ed45199982705484e09ea4",
-    "w3-cleaner/clean.js": "24ce292fb07dd762d912f1fd0ef63b5fa5f30f941a811819e148983c589f3da8",
     "w4-sql-window/questions.json": "ce354206dc11b6ed7a88395fbc9b3230d7c3a1b9d9dfe0f717f1e076ef8c550a"
   }
 }

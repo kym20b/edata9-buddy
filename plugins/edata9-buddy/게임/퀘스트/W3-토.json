@@ -1,50 +1,66 @@
 {
   "session": "W3-토",
-  "title": "내 주제의 지저분한 엑셀을, 내 스킬로",
-  "capture": "내 파일의 진단표 · 정답과 대조한 화면",
+  "title": "빈 폴더에서, 내 정리기를 처음부터",
+  "capture": "내 정리기의 정답 대조 화면 · 포트폴리오 3주 칸 · (과제 2) 대시보드",
   "tiers": {
     "최소": {
-      "label": "내 데이터를 내 규칙으로 정리했다",
+      "label": "과제 1 — 빈 폴더에서 내 처방과 정리기 화면까지",
       "checks": [
         {
           "type": "glob_min",
-          "pattern": "cleaner/rules/*.json",
-          "min": 3,
-          "label": "cleaner/rules/ 에 내 데이터의 규칙 파일이 없다"
+          "pattern": "my-cleaner/rules/*.json",
+          "min": 1,
+          "label": "my-cleaner/rules/ 에 처방 파일이 없다 — 교안 4단계"
+        },
+        {
+          "type": "exists",
+          "path": "my-cleaner/index.html",
+          "label": "my-cleaner/index.html 이 없다 — 교안 5단계"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "my-cleaner/lib/*.js",
+          "min": 1,
+          "label": "my-cleaner/lib/ 에 엑셀을 읽는 코드가 없다 — SheetJS 를 내려받았는가"
         }
       ]
     },
     "기본": {
-      "label": "내 데이터 · 진단 · 정답과 대조 · 올리기",
+      "label": "과제 1 끝 — 올리고 포트폴리오 3주 칸을 바꿔 끼웠다",
       "checks": [
         {
-          "type": "glob_min",
-          "pattern": "cleaner/tools/answer/*",
-          "min": 3,
-          "label": "cleaner/tools/answer/ 에 내 데이터의 정답이 없다"
+          "type": "git_remote",
+          "repo": "my-cleaner",
+          "contains": "github.com",
+          "label": "my-cleaner 가 GitHub에 올라가 있지 않다 — 교안 7단계"
         },
         {
-          "type": "glob_min",
-          "pattern": "cleaner/진단/*_진단.md",
-          "min": 3,
-          "label": "cleaner/진단/ 에 내 데이터의 진단 파일이 없다"
+          "type": "contains",
+          "path": "my-cleaner/.gitignore",
+          "text": "tools/",
+          "label": "my-cleaner/.gitignore 에 tools/ 가 없다 — 정답이 저장소에 올라간다"
         },
         {
           "type": "git_commits_since",
-          "repo": "cleaner",
+          "repo": "portfolio",
           "min": 1,
-          "label": "토요일 뒤로 cleaner 에 남긴 저장 지점이 없다 — 올렸는가"
+          "label": "토요일 뒤로 portfolio 에 남긴 저장 지점이 없다 — 3주 칸을 바꿔 끼웠는가(교안 8단계)"
         }
       ]
     },
     "도전": {
-      "label": "정리기에 처방 둘을 더했다",
+      "label": "과제 2 — 정제 대시보드",
       "checks": [
         {
-          "type": "file_changed",
-          "path": "cleaner/clean.js",
-          "mock": "w3-cleaner/clean.js",
-          "label": "clean.js 가 목업 그대로다"
+          "type": "exists",
+          "path": "my-data/대시보드/app.py",
+          "label": "my-data/대시보드/app.py 가 없다 — 교안 9단계"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "my-data/정제/*.py",
+          "min": 2,
+          "label": "my-data/정제/ 에 정제 함수 파일이 없다 — 교안 9단계"
         }
       ]
     }
