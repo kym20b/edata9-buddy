@@ -1,15 +1,35 @@
 {
   "session": "W4-목",
-  "title": "표를 이어 붙인다, 숫자가 부풀지 않게",
-  "capture": "계획 화면(«붙인 뒤 몇 줄»이 숫자로) · 실행 결과의 «예상 = 실측» 표",
+  "title": "표를 붙여 분석하고, 다시 돌릴 수 있게 남긴다",
+  "capture": "계획 화면 · «예상 = 실측» 표 · 창의 내 질문(✓ 둘) · 인사이트_목.md",
   "tiers": {
     "기본": {
-      "label": "조인 규칙 결정 기록",
+      "label": "조인 규칙 · 창에 내 질문 · 인사이트",
       "checks": [
-        {"type": "glob_min", "pattern": "my-wiki/decisions/d-*.md", "min": 1, "label": "my-wiki/decisions/ 에 결정 기록이 없다 — 조인 규칙을 남겼는가"}
+        {
+          "type": "glob_min",
+          "pattern": "my-wiki/decisions/d-*.md",
+          "min": 1,
+          "label": "my-wiki/decisions/ 에 결정 기록이 없다 — 조인 규칙을 남겼는가"
+        },
+        {
+          "type": "file_changed",
+          "path": "sql-window/questions.json",
+          "mock": "w4-sql-window/questions.json",
+          "label": "questions.json 이 목업 그대로다 — 내 질문을 창에 넣었는가(교안 7절)"
+        },
+        {
+          "type": "nonempty",
+          "path": "sql-window/인사이트_목.md",
+          "label": "sql-window/인사이트_목.md 가 없다 — 교안 9절"
+        }
       ]
     },
-    "도전": {"self": "월 요금 합계를 붙이기 전과 뒤로 세어 몇 배로 불었는지 봤다"},
-    "고수": {"self": "결정 기록의 «조회하다 알게 된 것»으로 질문을 다시 다듬어 덧붙였다"}
+    "도전": {
+      "self": "월 요금 합계를 붙이기 전과 뒤로 세어 몇 배로 불었는지 봤다"
+    },
+    "고수": {
+      "self": "인사이트의 «앞뒤 순서»를 계획 모드로 다시 세어 덧붙였다"
+    }
   }
 }
