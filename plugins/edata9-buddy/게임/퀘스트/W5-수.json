@@ -1,0 +1,35 @@
+{
+  "session": "W5-수",
+  "title": "언제부터 믿을 수 있나 — 기간과 유효 구간",
+  "capture": "그래프 두 개(0으로 채운 것 · 선을 끊은 것)를 나란히 · 재문의율 정의서",
+  "tiers": {
+    "기본": {
+      "label": "그래프 둘 · 재문의율 정의서 · 인사이트",
+      "checks": [
+        {
+          "type": "glob_min",
+          "pattern": "metric-card/그래프_*.png",
+          "min": 2,
+          "label": "metric-card/ 에 그래프 두 장(그래프_0채움 · 그래프_끊음)이 없다 — 교안 5절"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "my-wiki/decisions/*재문의*.md",
+          "min": 1,
+          "label": "my-wiki/decisions/ 에 재문의율 정의서가 없다 — 교안 7절"
+        },
+        {
+          "type": "nonempty",
+          "path": "metric-card/인사이트_수.md",
+          "label": "metric-card/인사이트_수.md 가 없다 — 교안 8절"
+        }
+      ]
+    },
+    "도전": {
+      "self": "이탈률 정의서에도 유효 구간을 조회해 덧붙였다"
+    },
+    "고수": {
+      "self": "신규 고객 이탈률을 «가입 뒤 같은 개월 수»로 다시 정의해 한 줄 남겼다"
+    }
+  }
+}

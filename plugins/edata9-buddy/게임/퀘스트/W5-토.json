@@ -1,0 +1,44 @@
+{
+  "session": "W5-토",
+  "title": "내 업무 지표 셋, 그리고 6주를 시작할 준비",
+  "capture": "내 지표 정의서 셋 · 다시 센 분자와 분모 · 노션 «지표 사전» 둘 이상",
+  "tiers": {
+    "최소": {
+      "label": "내 지표 정의서 하나",
+      "checks": [
+        {
+          "type": "glob_min",
+          "pattern": "my-wiki/decisions/d-*.md",
+          "min": 3,
+          "label": "my-wiki/decisions/ 의 정의서가 셋보다 적다 — 이탈률 · 재문의율에 내 지표 하나를 더했는가"
+        }
+      ]
+    },
+    "기본": {
+      "label": "지표 셋 · 판단기준 1~5주",
+      "checks": [
+        {
+          "type": "glob_min",
+          "pattern": "my-wiki/decisions/d-*.md",
+          "min": 5,
+          "label": "my-wiki/decisions/ 의 정의서가 다섯보다 적다 — 내 지표 셋을 다 남겼는가"
+        },
+        {
+          "type": "contains",
+          "path": "my-wiki/판단기준.md",
+          "text": "5주",
+          "label": "판단기준.md 에 «5주» 장이 없다 — 리셋 지점"
+        },
+        {
+          "type": "glob_min",
+          "pattern": "my-wiki/log/*.md",
+          "min": 1,
+          "label": "my-wiki/log/ 에 토요일 기록이 없다"
+        }
+      ]
+    },
+    "도전": {
+      "self": "과제 2 — 내 지표 하나의 카드 계획을 받아 «정의서에서 읽는 것»과 «코드에 남는 것»을 나눴다"
+    }
+  }
+}

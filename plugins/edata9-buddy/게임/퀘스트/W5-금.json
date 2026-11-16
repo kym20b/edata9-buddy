@@ -1,0 +1,46 @@
+{
+  "session": "W5-금",
+  "title": "세 AI에게 같은 지표를 묻고, 정의서와 함께 공유한다",
+  "capture": "Vercel 카드(정의 한 문장 · 분자 ÷ 분모) · 노션 «지표 사전» 첫 줄 · 포트폴리오 5주 칸",
+  "tiers": {
+    "기본": {
+      "label": "정의서 덧붙임 · GitHub · 포트폴리오 다섯째 칸 · «5주» 한 장",
+      "checks": [
+        {
+          "type": "file_changed",
+          "path": "metric-card/metrics/이탈률.json",
+          "mock": "w5-metric-card/metrics/이탈률.json",
+          "label": "metrics/이탈률.json 이 목업 그대로다 — 카드의 정의를 내 정의서와 맞췄는가(교안 5절)"
+        },
+        {
+          "type": "git_remote",
+          "repo": "metric-card",
+          "contains": "github.com",
+          "label": "metric-card 가 GitHub에 올라가 있지 않다"
+        },
+        {
+          "type": "json_list",
+          "path": "portfolio/portfolio.json",
+          "key": "cards",
+          "min": 5,
+          "nonempty": [
+            "judgment"
+          ],
+          "label": "포트폴리오에 «내가 내린 판단»이 든 칸이 다섯보다 적다"
+        },
+        {
+          "type": "contains",
+          "path": "my-wiki/판단기준.md",
+          "text": "5주",
+          "label": "판단기준.md 에 «5주» 장이 없다"
+        }
+      ]
+    },
+    "도전": {
+      "self": "재문의율도 노션 «지표 사전»에 한 줄 더 넣었다"
+    },
+    "고수": {
+      "self": "세 AI 가운데 카드에 없는 정의(예: 연초와 연말의 평균)를 정의서 선택지로 더할지 정하고 이유를 남겼다"
+    }
+  }
+}

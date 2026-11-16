@@ -1,0 +1,40 @@
+{
+  "session": "W5-목",
+  "title": "정의서만 고치면 숫자가 바뀐다 — 스킬 «지표»",
+  "capture": "정의서를 바꿔 달라진 카드 · /지표 가 빈 요소 때문에 멈춘 화면",
+  "tiers": {
+    "기본": {
+      "label": "스킬 «지표» · 멈출 조건 · 인사이트",
+      "checks": [
+        {
+          "type": "exists",
+          "path": "metric-card/.claude/skills/지표/SKILL.md",
+          "label": "metric-card/.claude/skills/지표/SKILL.md 가 없다 — 교안 5절"
+        },
+        {
+          "type": "contains",
+          "path": "metric-card/.claude/skills/지표/SKILL.md",
+          "text": "disable-model-invocation: true",
+          "label": "스킬이 «내가 부를 때만 돈다»(disable-model-invocation: true)가 아니다"
+        },
+        {
+          "type": "contains",
+          "path": "metric-card/.claude/skills/지표/SKILL.md",
+          "text": "멈",
+          "label": "SKILL.md 에 멈출 조건이 없다 — 빈 요소가 있으면 멈추게 했는가"
+        },
+        {
+          "type": "nonempty",
+          "path": "metric-card/인사이트_목.md",
+          "label": "metric-card/인사이트_목.md 가 없다 — 교안 7절"
+        }
+      ]
+    },
+    "도전": {
+      "self": "/지표 로 두 번째 지표의 정의서를 끝까지 쓰고(«써»), 이탈률 정의서와 같은 모양인지 맞춰 봤다"
+    },
+    "고수": {
+      "self": "정의서를 바꾼 기록(언제 · 누가 · 왜)을 남기는 칸을 스킬 결과 형식에 더했다"
+    }
+  }
+}
