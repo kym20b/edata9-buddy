@@ -1,7 +1,7 @@
 {
   "session": "W4-수",
-  "title": "Claude에게 데이터를 맡기고, 내가 검증한다",
-  "capture": "edata9-data 로 맡긴 신청 완료율 · DELETE 가 막힌 답 · 인사이트_수.md",
+  "title": "재문의, 어디부터 손대나 — Claude에게 진단을 맡기고, 내가 검증한다",
+  "capture": "edata9-data 로 맡긴 «어디부터» · DELETE 가 막힌 답 · 인사이트_수.md",
   "tiers": {
     "기본": {
       "label": "읽기만 하는 데이터 도구 · 결정 기록 · 인사이트",
@@ -28,7 +28,7 @@
           "type": "glob_min",
           "pattern": "my-wiki/decisions/d-*.md",
           "min": 1,
-          "label": "my-wiki/decisions/ 에 결정 기록이 없다 — 신청 완료율의 기준을 남겼는가(교안 6절)"
+          "label": "my-wiki/decisions/ 에 결정 기록이 없다 — 재문의 우선순위의 기준을 남겼는가(교안 6절)"
         },
         {
           "type": "contains",
@@ -42,7 +42,7 @@
       "self": "화요일 내 질문 하나를 기준을 먼저 적어 맡기고, 검증 한 줄을 남겼다"
     },
     "고수": {
-      "self": "신청 완료율을 월별로 나눠 «비교 기준 없음»을 채웠다"
+      "self": "달마다 비율 1위 · 건수 1위를 뽑아 열두 달 내내 그런지 확인했다"
     }
   }
 }
