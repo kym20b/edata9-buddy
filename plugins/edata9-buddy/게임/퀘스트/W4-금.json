@@ -1,10 +1,10 @@
 {
   "session": "W4-금",
-  "title": "Claude 없는 동료와 공유한다, 매달 받는 엑셀로",
-  "capture": "Vercel 주소에서 내 파일로 돌린 내 질문 · 포트폴리오 넷째 칸 · 노션 «4주»",
+  "title": "그래서 무엇을 — 처방 한 장을 쓰고, Claude 없는 동료와 공유한다",
+  "capture": "Vercel 주소에서 내 파일로 돌린 내 질문 · 처방 한 장 · 포트폴리오 넷째 칸 · 노션 «4주»",
   "tiers": {
     "기본": {
-      "label": "내 질문 · GitHub · 배포 제외 · 포트폴리오 넷째 칸 · «4주» 한 장",
+      "label": "내 질문 · 처방 한 장 · GitHub · 배포 제외 · 포트폴리오 넷째 칸 · «4주» 한 장",
       "checks": [
         {
           "type": "file_changed",
@@ -17,6 +17,12 @@
           "path": "sql-window/README.md",
           "text": "쓰기 전에",
           "label": "README.md 에 «쓰기 전에»가 없다 — 교안 2절"
+        },
+        {
+          "type": "contains",
+          "path": "sql-window/인사이트_금.md",
+          "text": "처방",
+          "label": "sql-window/인사이트_금.md 가 없거나 «처방» 칸이 없다 — 교안 7절"
         },
         {
           "type": "git_remote",
