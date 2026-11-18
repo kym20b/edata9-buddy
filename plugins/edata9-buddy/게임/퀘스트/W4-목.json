@@ -1,11 +1,16 @@
 {
   "session": "W4-목",
-  "title": "누가 떠날까 — 표를 붙여 분석하고, 다시 돌릴 수 있게 남긴다",
-  "capture": "계획 화면 · «예상 = 실측» 표 · 창의 내 질문(✓ 둘) · 인사이트_목.md",
+  "title": "누가 떠날까 — 테이블을 조인해 분석하고, 다시 돌릴 수 있게 남긴다",
+  "capture": "계획 화면 · «예상 = 실제» 행 수 대조표 · 리뷰어 검토 결과 · SQL 앱의 내 질문(✓ 둘) · 인사이트_목.md(출처 꼬리말)",
   "tiers": {
     "기본": {
-      "label": "조인 규칙 · 창에 내 질문 · 인사이트",
+      "label": "레퍼런스 문서 · 조인 규칙 · SQL 앱에 내 질문 · 인사이트 리포트",
       "checks": [
+        {
+          "type": "nonempty",
+          "path": "sql-window/docs/테이블_레퍼런스.md",
+          "label": "sql-window/docs/테이블_레퍼런스.md 가 없다 — 3절 `/데이터카드`가 레퍼런스 문서를 남겼는가"
+        },
         {
           "type": "glob_min",
           "pattern": "my-wiki/decisions/d-*.md",
@@ -16,20 +21,20 @@
           "type": "file_changed",
           "path": "sql-window/questions.json",
           "mock": "w4-sql-window/questions.json",
-          "label": "questions.json 이 목업 그대로다 — 내 질문을 창에 넣었는가(교안 7절)"
+          "label": "questions.json 이 목업 그대로다 — 내 질문을 SQL 앱에 넣었는가(교안 8절)"
         },
         {
           "type": "nonempty",
           "path": "sql-window/인사이트_목.md",
-          "label": "sql-window/인사이트_목.md 가 없다 — 교안 9절"
+          "label": "sql-window/인사이트_목.md 가 없다 — 교안 10절 인사이트 리포트"
         }
       ]
     },
     "도전": {
-      "self": "월 요금 합계를 붙이기 전과 뒤로 세어 몇 배로 불었는지 봤다"
+      "self": "월 요금 합계를 조인 전과 조인 후로 세어 몇 배로 불었는지 봤다"
     },
     "고수": {
-      "self": "인사이트의 «앞뒤 순서»를 계획 모드로 다시 세어 덧붙였다"
+      "self": "«이탈일까지만 문의할 수 있었다»를 관찰 기간 구간별로 나눠 다시 셌다"
     }
   }
 }
