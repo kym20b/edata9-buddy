@@ -1,7 +1,7 @@
 {
   "session": "W5-화",
   "title": "같은 이름, 다른 숫자 — 지표를 정의한다",
-  "capture": "다섯 숫자를 한 줄씩 설명한 표 · 내 이탈률 정의서(결정 기록)",
+  "capture": "다섯 숫자를 대조한 표 · 내 이탈률 정의서(결정 기록)",
   "tiers": {
     "기본": {
       "label": "지표 카드 · 이탈률 정의서 · 인사이트",
@@ -21,12 +21,12 @@
           "type": "glob_min",
           "pattern": "my-wiki/decisions/*이탈*.md",
           "min": 1,
-          "label": "my-wiki/decisions/ 에 이탈률 정의서가 없다 — 교안 9절"
+          "label": "my-wiki/decisions/ 에 이탈률 정의서가 없다 — 교안 8절"
         },
         {
           "type": "nonempty",
           "path": "metric-card/인사이트_화.md",
-          "label": "metric-card/인사이트_화.md 가 없다 — 교안 10절"
+          "label": "metric-card/인사이트_화.md 가 없다 — 교안 9절"
         }
       ]
     },

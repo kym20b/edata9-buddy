@@ -10,18 +10,18 @@
           "type": "glob_min",
           "pattern": "metric-card/그래프_*.png",
           "min": 2,
-          "label": "metric-card/ 에 그래프 두 장(그래프_0채움 · 그래프_끊음)이 없다 — 교안 5절"
+          "label": "metric-card/ 에 그래프 두 장(그래프_0채움 · 그래프_끊음)이 없다 — 교안 6절"
         },
         {
           "type": "glob_min",
           "pattern": "my-wiki/decisions/*재문의*.md",
           "min": 1,
-          "label": "my-wiki/decisions/ 에 재문의율 정의서가 없다 — 교안 7절"
+          "label": "my-wiki/decisions/ 에 재문의율 정의서가 없다 — 교안 8절"
         },
         {
           "type": "nonempty",
           "path": "metric-card/인사이트_수.md",
-          "label": "metric-card/인사이트_수.md 가 없다 — 교안 8절"
+          "label": "metric-card/인사이트_수.md 가 없다 — 교안 9절"
         }
       ]
     },

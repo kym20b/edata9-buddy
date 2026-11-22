@@ -9,8 +9,8 @@
         {
           "type": "glob_min",
           "pattern": "my-wiki/decisions/d-*.md",
-          "min": 3,
-          "label": "my-wiki/decisions/ 의 정의서가 셋보다 적다 — 이탈률 · 재문의율에 내 지표 하나를 더했는가"
+          "min": 5,
+          "label": "my-wiki/decisions/ 의 정의서가 다섯보다 적다 — 시작 폴더의 넷(d-001~d-004)에 내 지표 하나를 더했는가"
         }
       ]
     },
@@ -20,8 +20,8 @@
         {
           "type": "glob_min",
           "pattern": "my-wiki/decisions/d-*.md",
-          "min": 5,
-          "label": "my-wiki/decisions/ 의 정의서가 다섯보다 적다 — 내 지표 셋을 다 남겼는가"
+          "min": 7,
+          "label": "my-wiki/decisions/ 의 정의서가 일곱보다 적다 — 내 지표 셋을 다 남겼는가"
         },
         {
           "type": "contains",
