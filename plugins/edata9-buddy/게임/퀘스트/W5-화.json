@@ -1,40 +1,48 @@
 {
   "session": "W5-화",
-  "title": "같은 이름, 다른 숫자 — 지표를 정의한다",
-  "capture": "다섯 숫자를 대조한 표 · 내 이탈률 정의서(결정 기록)",
+  "title": "지표 정의와 지표 사전 — 활성 고객",
+  "capture": "앱의 활성 고객 비율 카드 · 12절의 답 첫 줄 · 13절의 대답 두 문장",
   "tiers": {
     "기본": {
-      "label": "지표 카드 · 이탈률 정의서 · 인사이트",
+      "label": "활성 고객 정의서 · 버린 이유 · CLAUDE.md 지표 규칙",
       "checks": [
         {
           "type": "exists",
-          "path": "metric-card/metrics/이탈률.json",
-          "label": "metric-card/metrics/이탈률.json 이 없다 — 목업을 metric-card 로 가져왔는가(교안 2절)"
+          "path": "metric-dictionary/.claude/skills/explore-data/SKILL.md",
+          "label": "metric-dictionary/.claude/skills/explore-data/SKILL.md 가 없다 — 교안 4절의 설치 프롬프트"
+        },
+        {
+          "type": "exists",
+          "path": "metric-dictionary/metrics/활성_고객_비율.json",
+          "label": "metric-dictionary/metrics/활성_고객_비율.json 이 없다 — 교안 9절"
         },
         {
           "type": "contains",
-          "path": "metric-card/app.js",
-          "text": "정의서의 기본값",
-          "label": "옛 목업이다(카드가 프리셋 A로 열린다) — 다시 받은 W5 목업 zip 으로 새로 복사"
+          "path": "metric-dictionary/metrics/index.json",
+          "text": "활성_고객_비율",
+          "label": "metrics/index.json 에 활성_고객_비율 이 없다 — 카드가 생기지 않는다"
         },
         {
-          "type": "glob_min",
-          "pattern": "my-wiki/decisions/*이탈*.md",
-          "min": 1,
-          "label": "my-wiki/decisions/ 에 이탈률 정의서가 없다 — 교안 8절"
+          "type": "absent",
+          "patterns": [
+            "metric-dictionary/metrics/활성_고객_비율.json"
+          ],
+          "text": "\"reason\": \"\"",
+          "label": "활성_고객_비율.json 에 비어 있는 버린 이유가 있다 — 교안 10절"
         },
         {
-          "type": "nonempty",
-          "path": "metric-card/인사이트_화.md",
-          "label": "metric-card/인사이트_화.md 가 없다 — 교안 9절"
+          "type": "contains",
+          "path": "metric-dictionary/CLAUDE.md",
+          "text": "지표 정의",
+          "label": "metric-dictionary/CLAUDE.md 에 «지표 정의» 규칙이 없다 — 교안 11절"
         }
       ]
     },
     "도전": {
-      "self": "카드에서 최소 표본에 걸려 숨는 조합을 찾고, 그 이유를 정의서에 덧붙였다"
+      "self": "8월 행동으로 9~11월 해지를 같은 방식으로 세어 기준값이 달마다 같은지 봤다"
     },
     "고수": {
-      "self": "1월 1일 해지 15명을 뺄지 남길지 정하고 이유를 정의서에 남겼다"
+      "self": "12월 31일에 해지한 고객 25명을 월말 유지에 넣을지 정하고 이유를 정의서에 남겼다"
     }
   }
 }

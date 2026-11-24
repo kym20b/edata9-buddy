@@ -1,40 +1,53 @@
 {
   "session": "W5-목",
-  "title": "정의서만 고치면 숫자가 바뀐다 — 스킬 «지표»",
-  "capture": "정의서를 바꿔 달라진 카드 · /지표 가 빈 요소 때문에 멈춘 화면",
+  "title": "구조와 계보 — 상담 만족도",
+  "capture": "erd.html 그림 · 상담 만족도 카드와 계보 탭 · 6절의 점검 답 · 8절의 새 대화 답",
   "tiers": {
     "기본": {
-      "label": "스킬 «지표» · 멈출 조건 · 인사이트",
+      "label": "ERD · 상담 만족도 정의서(문장 · SQL 일치) · 점검 스킬",
       "checks": [
         {
+          "type": "contains",
+          "path": "metric-dictionary/erd.html",
+          "text": "erDiagram",
+          "label": "metric-dictionary/erd.html 이 없거나 Mermaid ERD가 없다 — 교안 3절"
+        },
+        {
           "type": "exists",
-          "path": "metric-card/.claude/skills/지표/SKILL.md",
-          "label": "metric-card/.claude/skills/지표/SKILL.md 가 없다 — 교안 7절"
+          "path": "metric-dictionary/metrics/상담_만족도.json",
+          "label": "metrics/상담_만족도.json 이 없다 — 교안 5절"
         },
         {
           "type": "contains",
-          "path": "metric-card/.claude/skills/지표/SKILL.md",
-          "text": "disable-model-invocation: true",
-          "label": "스킬이 «내가 부를 때만 돈다»(disable-model-invocation: true)가 아니다"
+          "path": "metric-dictionary/metrics/index.json",
+          "text": "상담_만족도",
+          "label": "metrics/index.json 에 상담_만족도 가 없다 — 카드가 생기지 않는다"
         },
         {
           "type": "contains",
-          "path": "metric-card/.claude/skills/지표/SKILL.md",
-          "text": "멈",
-          "label": "SKILL.md 에 멈출 조건이 없다 — 빈 요소가 있으면 멈추게 했는가"
+          "path": "metric-dictionary/metrics/상담_만족도.json",
+          "text": "JOIN agents",
+          "label": "상담_만족도.json 의 sql 이 agents 를 조인하지 않는다 — 문장만 고치고 SQL은 그대로인가(교안 6절)"
         },
         {
-          "type": "nonempty",
-          "path": "metric-card/인사이트_목.md",
-          "label": "metric-card/인사이트_목.md 가 없다 — 교안 11절"
+          "type": "contains",
+          "path": "metric-dictionary/metrics/상담_만족도.json",
+          "text": "\"agents.is_resigned\"",
+          "label": "상담_만족도.json 의 sources 에 agents.is_resigned 가 없다 — 계보 탭에 agents 선이 생기지 않는다(교안 6절)"
+        },
+        {
+          "type": "contains",
+          "path": "metric-dictionary/.claude/skills/정의점검/SKILL.md",
+          "text": "disable-model-invocation",
+          "label": ".claude/skills/정의점검/SKILL.md 가 없거나 «내가 부를 때만 돈다» 설정이 없다 — 교안 7절"
         }
       ]
     },
     "도전": {
-      "self": "/지표 로 두 번째 지표의 정의서를 끝까지 쓰고(«써»), 이탈률 정의서와 같은 모양인지 맞춰 봤다"
+      "self": "4절의 영향 질문을 customers.is_churned 로 바꿔 보내 영향 지표가 어떻게 다른지 봤다"
     },
     "고수": {
-      "self": "정의서를 바꾼 기록(언제 · 누가 · 왜)을 남기는 항목을 스킬 결과 형식에 더했다"
+      "self": "6절의 점검에서 «어느 쪽이 맞는지는 정하지 마»를 빼고 보내 Claude의 판단을 봤다"
     }
   }
 }

@@ -1,35 +1,57 @@
 {
   "session": "W5-수",
-  "title": "언제부터 믿을 수 있나 — 기간과 유효 구간",
-  "capture": "그래프 두 개(0으로 채운 것 · 선을 끊은 것)를 나란히 · 재문의율 정의서",
+  "title": "조인과 지표 조합 — 월 청구 합계 · 고객당 매출",
+  "capture": "앱의 고객당 매출 카드와 계보 탭 · 11절의 답 첫 줄 · 12절의 대답 두 문장",
   "tiers": {
     "기본": {
-      "label": "그래프 둘 · 재문의율 정의서 · 인사이트",
+      "label": "정의서 둘 · 파생 정의서 · 입력 정의서 수정 · 그림",
       "checks": [
         {
-          "type": "glob_min",
-          "pattern": "metric-card/그래프_*.png",
-          "min": 2,
-          "label": "metric-card/ 에 그래프 두 장(그래프_0채움 · 그래프_끊음)이 없다 — 교안 6절"
+          "type": "exists",
+          "path": "metric-dictionary/metrics/월_청구_합계.json",
+          "label": "metrics/월_청구_합계.json 이 없다 — 교안 7절"
+        },
+        {
+          "type": "exists",
+          "path": "metric-dictionary/metrics/월말_유지_고객_수.json",
+          "label": "metrics/월말_유지_고객_수.json 이 없다 — 교안 7절"
+        },
+        {
+          "type": "contains",
+          "path": "metric-dictionary/metrics/index.json",
+          "text": "고객당_매출",
+          "label": "metrics/index.json 에 고객당_매출 이 없다 — 카드가 생기지 않는다"
+        },
+        {
+          "type": "contains",
+          "path": "metric-dictionary/metrics/고객당_매출.json",
+          "text": "\"kind\": \"derived\"",
+          "label": "고객당_매출.json 이 파생 정의서(kind: derived)가 아니다 — 교안 8절"
+        },
+        {
+          "type": "contains",
+          "path": "metric-dictionary/metrics/월_청구_합계.json",
+          "text": "월말 유지 고객",
+          "label": "월_청구_합계.json 에 «월말 유지 고객»이 없다 — 분자의 대상을 분모와 맞췄는가(교안 10절)"
+        },
+        {
+          "type": "exists",
+          "path": "metric-dictionary/.claude/skills/create-viz/SKILL.md",
+          "label": "metric-dictionary/.claude/skills/create-viz/SKILL.md 가 없다 — 교안 6절의 설치 프롬프트"
         },
         {
           "type": "glob_min",
-          "pattern": "my-wiki/decisions/*재문의*.md",
+          "pattern": "metric-dictionary/월말유지_두기준*.png",
           "min": 1,
-          "label": "my-wiki/decisions/ 에 재문의율 정의서가 없다 — 교안 8절"
-        },
-        {
-          "type": "nonempty",
-          "path": "metric-card/인사이트_수.md",
-          "label": "metric-card/인사이트_수.md 가 없다 — 교안 9절"
+          "label": "metric-dictionary/ 에 월말유지_두기준 그림이 없다 — 교안 6절"
         }
       ]
     },
     "도전": {
-      "self": "이탈률 정의서에도 유효 구간을 조회해 덧붙였다"
+      "self": "화요일 활성 고객 비율 정의서에도 분자 · 분모 점검을 보내 결과를 봤다"
     },
     "고수": {
-      "self": "신규 고객 이탈률을 «가입 뒤 같은 개월 수»로 다시 정의해 한 줄 남겼다"
+      "self": "고친 정의에 맞게 월 청구 합계 정의서의 purpose · 답할 수 없는 것을 정리했다"
     }
   }
 }
