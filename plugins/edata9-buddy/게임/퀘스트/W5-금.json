@@ -40,13 +40,13 @@
           "type": "git_remote",
           "repo": "metric-dictionary",
           "contains": "github.com",
-          "label": "metric-dictionary 가 GitHub에 올라가 있지 않다 — 교안 8절"
+          "label": "metric-dictionary 가 GitHub에 올라가 있지 않다 — 교안 9절"
         },
         {
           "type": "contains",
           "path": "my-wiki/판단기준.md",
           "text": "5주",
-          "label": "판단기준.md 에 «5주» 장이 없다 — 교안 10절"
+          "label": "판단기준.md 에 «5주» 장이 없다 — 교안 11절"
         },
         {
           "type": "json_list",
@@ -56,15 +56,15 @@
           "nonempty": [
             "judgment"
           ],
-          "label": "포트폴리오에 «내가 내린 판단»이 든 카드가 다섯보다 적다 — 교안 10절"
+          "label": "포트폴리오에 «내가 내린 판단»이 든 카드가 다섯보다 적다 — 교안 11절"
         }
       ]
     },
     "도전": {
-      "self": "3절의 질문을 «연 이탈률»로 바꿔 AI마다 분모가 갈리는지 봤다"
+      "self": "3절의 질문을 «연 이탈률»로 바꿔 AI마다 분모가 다른지 봤다"
     },
     "고수": {
-      "self": "6절 검수가 지적한 20.5%의 비교 기준을 정의서 이유에 적게 했다"
+      "self": "6절 검수가 지적한 활성 고객 비율의 버린 이유 둘을 고치게 하고 /정의점검을 다시 불렀다"
     }
   }
 }
