@@ -1,7 +1,7 @@
 {
   "session": "W5-토",
   "title": "내 데이터로, 내 지표 사전을 처음부터",
-  "capture": "내 지표 사전의 카드 · 새 대화의 답 첫 줄 · erd.html 그림 · (선택) 대시보드",
+  "capture": "내 지표 사전의 카드 · 대시보드 탭 · 새 대화의 답 첫 줄 · erd.html 그림",
   "tiers": {
     "최소": {
       "label": "내 지표 사전의 앱 틀 · ERD · 정의서 하나",
@@ -37,14 +37,14 @@
         {
           "type": "glob_min",
           "pattern": "my-metrics/.claude/skills/*/SKILL.md",
-          "min": 5,
-          "label": "my-metrics/.claude/skills/ 에 내가 만든 스킬이 없다(복사해 온 넷 말고) — 교안 8단계"
+          "min": 4,
+          "label": "my-metrics/.claude/skills/ 에 내가 만든 스킬이 없다(복사해 온 셋 말고) — 교안 8단계"
         },
         {
           "type": "contains",
           "path": "my-wiki/판단기준.md",
           "text": "5주",
-          "label": "판단기준.md 에 «5주» 장이 없다 — 금요일 11절 · 리셋 지점"
+          "label": "판단기준.md 에 «5주» 장이 없다 — 금요일 8절 · 리셋 지점"
         },
         {
           "type": "git_remote",

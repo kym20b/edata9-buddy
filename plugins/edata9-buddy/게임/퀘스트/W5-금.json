@@ -1,52 +1,45 @@
 {
   "session": "W5-금",
-  "title": "정의서를 AI와 함께 쓰고, 배포 전에 점검한다 — 월 이탈률",
-  "capture": "배포한 URL의 월 이탈률 카드 · 5절의 답 첫 줄 · 판단 한 장 5주",
+  "title": "시맨틱 레이어: 정의서로 대시보드를 만들고 배포한다",
+  "capture": "배포한 URL의 대시보드 · 5절의 새 대화 답 첫 줄 · 판단 한 장 5주",
   "tiers": {
     "기본": {
-      "label": "월 이탈률 정의서 · 검수 스킬 · GitHub · 판단 한 장 · 포트폴리오 다섯째 카드",
+      "label": "정의서 여섯 · 대시보드 탭 · dashboard.json · GitHub · 판단 한 장 · 포트폴리오 다섯째 카드",
       "checks": [
         {
-          "type": "exists",
-          "path": "metric-dictionary/metrics/월_이탈률.json",
-          "label": "metrics/월_이탈률.json 이 없다 — 교안 4절"
+          "type": "glob_min",
+          "pattern": "metric-dictionary/metrics/*.json",
+          "min": 7,
+          "label": "metrics/ 의 정의서가 여섯보다 적다(index.json 말고) — 정답본 목요일_끝/metrics"
         },
         {
           "type": "contains",
-          "path": "metric-dictionary/metrics/index.json",
-          "text": "월_이탈률",
-          "label": "metrics/index.json 에 월_이탈률 이 없다 — 카드가 생기지 않는다"
-        },
-        {
-          "type": "contains",
-          "path": "metric-dictionary/metrics/월_이탈률.json",
-          "text": "월초",
-          "label": "월_이탈률.json 의 분모가 «월초 고객»이 아니다 — 교안 4절"
-        },
-        {
-          "type": "absent",
-          "patterns": [
-            "metric-dictionary/metrics/월_이탈률.json"
-          ],
-          "text": "{prev_month_end}",
-          "label": "월_이탈률.json 에 앱이 모르는 자리표시자 {prev_month_end} 가 있다 — 카드가 «계산 오류»가 된다(교안 4절)"
+          "path": "metric-dictionary/index.html",
+          "text": "대시보드",
+          "label": "index.html 에 «대시보드» 탭이 없다 — 교안 4절"
         },
         {
           "type": "exists",
-          "path": "metric-dictionary/.claude/skills/validate-data/SKILL.md",
-          "label": ".claude/skills/validate-data/SKILL.md 가 없다 — 교안 6절의 설치 프롬프트"
+          "path": "metric-dictionary/dashboard.json",
+          "label": "dashboard.json 이 없다 — 교안 4절"
+        },
+        {
+          "type": "contains",
+          "path": "metric-dictionary/app.js",
+          "text": "dashboard.json",
+          "label": "app.js 가 dashboard.json 을 읽지 않는다 — 교안 4절"
         },
         {
           "type": "git_remote",
           "repo": "metric-dictionary",
           "contains": "github.com",
-          "label": "metric-dictionary 가 GitHub에 올라가 있지 않다 — 교안 9절"
+          "label": "metric-dictionary 가 GitHub에 올라가 있지 않다 — 교안 6절"
         },
         {
           "type": "contains",
           "path": "my-wiki/판단기준.md",
           "text": "5주",
-          "label": "판단기준.md 에 «5주» 장이 없다 — 교안 11절"
+          "label": "판단기준.md 에 «5주» 장이 없다 — 교안 8절"
         },
         {
           "type": "json_list",
@@ -56,15 +49,15 @@
           "nonempty": [
             "judgment"
           ],
-          "label": "포트폴리오에 «내가 내린 판단»이 든 카드가 다섯보다 적다 — 교안 11절"
+          "label": "포트폴리오에 «내가 내린 판단»이 든 카드가 다섯보다 적다 — 교안 8절"
         }
       ]
     },
     "도전": {
-      "self": "3절의 질문을 «연 이탈률»로 바꿔 AI마다 분모가 다른지 봤다, 또는 추가 교안으로 telco.db를 만들었다"
+      "self": "dashboard.json 의 배치를 내 회의에 맞게 바꾸고 이유를 판단 한 장에 적었다, 또는 추가 교안으로 telco.db를 만들었다"
     },
     "고수": {
-      "self": "6절 검수가 지적한 활성 고객 비율의 버린 이유 둘을 고치게 하고 /정의점검을 다시 불렀다, 또는 app.js의 함수 호출도를 파서로 뽑았다"
+      "self": "대시보드의 숫자를 누르면 지표 카드 탭에서 그 정의서가 열리게 했다, 또는 활성 고객 비율을 요금제별로 나누는 차원 설계안을 받았다"
     }
   }
 }
