@@ -1,0 +1,58 @@
+{
+  "session": "W6-금",
+  "title": "규모 계산과 배포: 판정기에 «필요 인원 · 기간» 탭을 더해 인터넷에 올린다",
+  "capture": "배포한 URL의 «필요 인원 · 기간» 탭 · 개념 정리 아티팩트 · 판단 한 장 6주",
+  "tiers": {
+    "기본": {
+      "label": "필요 인원 · 기간 탭 · 기준값 되돌리기 · GitHub · 판단 한 장 · 포트폴리오 여섯째 카드",
+      "checks": [
+        {
+          "type": "contains",
+          "path": "w6-ab-judge/index.html",
+          "text": "필요 인원",
+          "label": "index.html 에 «필요 인원 · 기간» 탭이 없다 — 교안 4절"
+        },
+        {
+          "type": "contains",
+          "path": "w6-ab-judge/app.js",
+          "text": "sampleSize",
+          "label": "app.js 가 judge.js 의 sampleSize 를 쓰지 않는다 — 교안 4절"
+        },
+        {
+          "type": "contains",
+          "path": "w6-ab-judge/rules.json",
+          "text": "\"mde_relative\": 10",
+          "label": "rules.json 의 mde_relative 가 10 이 아니다 — 교안 6절에서 되돌린다"
+        },
+        {
+          "type": "git_remote",
+          "repo": "w6-ab-judge",
+          "contains": "github.com",
+          "label": "w6-ab-judge 가 GitHub에 올라가 있지 않다 — 교안 5절"
+        },
+        {
+          "type": "contains",
+          "path": "my-wiki/판단기준.md",
+          "text": "6주",
+          "label": "판단기준.md 에 «6주» 장이 없다 — 교안 8절"
+        },
+        {
+          "type": "json_list",
+          "path": "portfolio/portfolio.json",
+          "key": "cards",
+          "min": 6,
+          "nonempty": [
+            "judgment"
+          ],
+          "label": "포트폴리오에 «내가 내린 판단»이 든 카드가 여섯보다 적다 — 교안 8절"
+        }
+      ]
+    },
+    "도전": {
+      "self": "계산 탭에 찾을 차이를 입력해 보는 입력란을 더하고, 처음 값은 rules.json 에서 읽게 했다"
+    },
+    "고수": {
+      "self": "노션 «실험 관리»의 필요한 표본과 기간을 판정기 탭으로 다시 계산해 노션 값과 대조했다"
+    }
+  }
+}

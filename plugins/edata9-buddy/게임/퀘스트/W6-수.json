@@ -1,0 +1,28 @@
+{
+  "session": "W6-수",
+  "title": "퍼널과 가설: 고칠 곳을 고르고, 틀릴 수 있게 써서 노션에 남긴다",
+  "capture": "아티팩트의 기기 드릴다운 · 노션 «실험 관리» 데이터베이스 · 9절 답의 첫 줄",
+  "tiers": {
+    "기본": {
+      "label": "analyze · write-query 스킬 (노션 «실험 관리»는 캡처로)",
+      "checks": [
+        {
+          "type": "exists",
+          "path": "funnel-hypothesis/.claude/skills/analyze/SKILL.md",
+          "label": "funnel-hypothesis/.claude/skills/analyze/SKILL.md 가 없다 — 교안 3절"
+        },
+        {
+          "type": "exists",
+          "path": "funnel-hypothesis/.claude/skills/write-query/SKILL.md",
+          "label": "funnel-hypothesis/.claude/skills/write-query/SKILL.md 가 없다 — 교안 3절"
+        }
+      ]
+    },
+    "도전": {
+      "self": "유입 채널로 나눴을 때 차이가 가장 큰 단계로 가설을 하나 더 써서 «실험 관리»에 넣고, 새 대화에서 두 실험을 함께 물었다"
+    },
+    "고수": {
+      "self": "«실험 관리»에 «찾을 차이(%p)» 속성을 더하고, 찾을 차이를 +3%p로 낮추면 판정일이 언제가 되는지 물었다"
+    }
+  }
+}

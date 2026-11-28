@@ -1,0 +1,56 @@
+{
+  "session": "W6-토",
+  "title": "도메인 실험 데이터로: 판정기를 데이터만 바꿔 쓰고, 내 업무의 실험을 설계한다",
+  "capture": "도메인 판정기의 다섯 판정 중 하나 · 노션 «실험 관리»의 판정 완료 행 · 내 가상 실험의 필요 기간",
+  "tiers": {
+    "최소": {
+      "label": "도메인 데이터 · 판정기 사본 my-judge · 새 입력 파일(실험 다섯 건)",
+      "checks": [
+        {
+          "type": "exists",
+          "path": "domain-data/data/experiments.csv",
+          "label": "domain-data/data/experiments.csv 가 없다 — 교안 1단계(두 zip을 domain-data 에 푼다)"
+        },
+        {
+          "type": "exists",
+          "path": "my-judge/judge.js",
+          "label": "my-judge/judge.js 가 없다 — 교안 1단계(금요일 w6-ab-judge 를 복사해 my-judge 로)"
+        },
+        {
+          "type": "exists",
+          "path": "my-judge/data/experiments_통신사.json",
+          "label": "my-judge/data/experiments_통신사.json 이 없다 — 교안 3단계(지금 파일은 이름을 바꿔 남긴다)"
+        },
+        {
+          "type": "json_list",
+          "path": "my-judge/data/experiments.json",
+          "key": "experiments",
+          "min": 5,
+          "label": "my-judge/data/experiments.json 에 실험이 다섯 건이 안 된다 — 교안 3단계"
+        },
+        {
+          "type": "absent",
+          "patterns": [
+            "my-judge/data/experiments.json"
+          ],
+          "text": "EXP-001",
+          "label": "my-judge/data/experiments.json 에 통신사 실험이 남아 있다 — 교안 3단계"
+        }
+      ]
+    },
+    "기본": {
+      "self": "도메인 다섯 판정을 노션 «실험 관리»에 판정 완료로 올리고, 내 업무의 가상 실험을 설계 중으로 올렸다(검출할 수 없으면 본문 첫 줄에 적었다)"
+    },
+    "도전": {
+      "label": "통계검산관을 도메인 데이터에 맞췄다",
+      "checks": [
+        {
+          "type": "contains",
+          "path": "my-judge/.claude/agents/통계검산관.md",
+          "text": "domain-data",
+          "label": "my-judge/.claude/agents/통계검산관.md 가 domain-data 의 CSV를 읽게 바뀌지 않았다 — 교안 과제 1의 도전"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "session": "W6-화",
+  "title": "차이를 믿기 전에: 세 가지 점검을 노트북으로 세운다",
+  "capture": "노트북 화면(슬라이더와 ①) · 보고서 HTML · 9절 iOS 대 Android의 ② 층화 비교",
+  "tiers": {
+    "기본": {
+      "label": "statistical-analysis 스킬 · 그룹 비교 노트북 · HTML 보고서 · iOS 대 Android",
+      "checks": [
+        {
+          "type": "exists",
+          "path": "group-compare/.claude/skills/statistical-analysis/SKILL.md",
+          "label": "group-compare/.claude/skills/statistical-analysis/SKILL.md 가 없다 — 교안 3절"
+        },
+        {
+          "type": "contains",
+          "path": "group-compare/group_compare.py",
+          "text": "marimo",
+          "label": "group-compare/group_compare.py 가 없거나 marimo 노트북이 아니다 — 교안 6절"
+        },
+        {
+          "type": "exists",
+          "path": "group-compare/group_compare_report.html",
+          "label": "group_compare_report.html 이 없다 — 교안 8절"
+        },
+        {
+          "type": "any",
+          "of": [
+            {"type": "contains", "path": "group-compare/group_compare.py", "text": "iOS"},
+            {"type": "exists", "path": "group-compare/*iOS*.py"}
+          ],
+          "label": "iOS 대 Android 비교를 돌린 흔적이 없다 — 교안 9절(맨 위 설정만 바꾼다)"
+        }
+      ]
+    },
+    "도전": {
+      "self": "설정을 바꿔 울산 고객 대 나머지 지역을 돌리고, 2절 ①의 다중 비교를 노트북의 결론과 비교했다"
+    },
+    "고수": {
+      "self": "그룹 컬럼과 지표 컬럼을 드롭다운으로 고르는 입력 상자를 노트북에 더했다"
+    }
+  }
+}

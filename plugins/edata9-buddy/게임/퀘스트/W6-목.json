@@ -1,0 +1,41 @@
+{
+  "session": "W6-목",
+  "title": "판정 규칙: 결과를 보기 전에 정하고, 따로 다시 세는 검산 팀원을 둔다",
+  "capture": "판정기의 EXP-002 판정 화면 · 통계검산관.md · 7절 검산 보고서의 첫 표",
+  "tiers": {
+    "기본": {
+      "label": "판정기 목업 · 기준값 그대로 · 서브에이전트 통계검산관",
+      "checks": [
+        {
+          "type": "exists",
+          "path": "w6-ab-judge/judge.js",
+          "label": "w6-ab-judge/judge.js 가 없다 — 목업 zip을 C:\\edata9-work\\w6-ab-judge 에 푼다"
+        },
+        {
+          "type": "contains",
+          "path": "w6-ab-judge/rules.json",
+          "text": "\"srm_p\": 0.001",
+          "label": "rules.json 의 srm_p 가 0.001 이 아니다 — 4절은 계산만, 파일은 되돌린다"
+        },
+        {
+          "type": "contains",
+          "path": "w6-ab-judge/.claude/agents/통계검산관.md",
+          "text": "name: 통계검산관",
+          "label": "w6-ab-judge/.claude/agents/통계검산관.md 가 없거나 name 줄이 없다 — 교안 6절"
+        },
+        {
+          "type": "contains",
+          "path": "w6-ab-judge/.claude/agents/통계검산관.md",
+          "text": "metric-dictionary",
+          "label": "통계검산관이 원본(metric-dictionary)을 읽게 적혀 있지 않다 — 교안 6절"
+        }
+      ]
+    },
+    "도전": {
+      "self": "7절에서 정한 정의를 통계검산관 파일의 «정의를 먼저 적고 센다»에 넣고 EXP-002만 다시 검산했다"
+    },
+    "고수": {
+      "self": "노션 가설에 «판정 규칙» 속성을 더해 rules.json 의 기준값을 옮기고, 새 대화에서 어느 관문부터 볼지 물었다"
+    }
+  }
+}
